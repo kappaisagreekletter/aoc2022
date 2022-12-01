@@ -3,14 +3,14 @@ use std::{
     io::{BufRead, BufReader},
 };
 
-pub fn day1() {
-    let file = File::open("src/day1/cals.txt").unwrap();
+pub fn day01() {
+    let file = File::open("src/day1/cals.txt").expect("There should be a file src/day1/cals.txt");
     let reader = BufReader::new(file);
     let mut cal_sum_vec = Vec::new();
 
     let mut elf_cals = 0;
     for line in reader.lines() {
-        let line = line.expect("");
+        let line = line.expect("there should be a line to read");
         let line = line.trim();
         if line == "" {
             cal_sum_vec.push(elf_cals);
@@ -18,7 +18,9 @@ pub fn day1() {
             //println!();
             continue;
         }
-        elf_cals += line.parse::<i32>().unwrap();
+        elf_cals += line
+            .parse::<i32>()
+            .expect("each line should contain nothing or an i32");
 
         //println!("{}", line);
     }
