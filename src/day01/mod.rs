@@ -1,8 +1,8 @@
 pub fn day01() {
     println!("\nday 1:");
 
-    let file = std::fs::read_to_string("private/day1.txt")
-        .expect("There should be a file private/day1.txt");
+    let file =
+        std::fs::read_to_string("inputs/day1.txt").expect("There should be a file inputs/day1.txt");
     let mut elf_totals = file
         .split("\n\n")
         .map(|elf| {

@@ -4,8 +4,8 @@
 pub fn day02() {
     println!("\nday 2:");
 
-    let file = std::fs::read_to_string("private/day2.txt")
-        .expect("There should be a file private/day2.txt");
+    let file =
+        std::fs::read_to_string("inputs/day2.txt").expect("There should be a file inputs/day2.txt");
     let player_moves = file
         .lines()
         .map(|round| {

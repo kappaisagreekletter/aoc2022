@@ -1,8 +1,8 @@
 pub fn day03() {
     println!("\nday 3:");
 
-    let file = std::fs::read_to_string("private/day3.txt")
-        .expect("There should be a file private/day3.txt");
+    let file =
+        std::fs::read_to_string("inputs/day3.txt").expect("There should be a file inputs/day3.txt");
 
     println!("\tpart1: {}", get_sum_priority_of_lines(&file));
     println!("\tpart2: {}", get_badges_prio_sum(&file));
