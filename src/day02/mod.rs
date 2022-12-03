@@ -1,4 +1,9 @@
+// for some reason it complains that `outcome` and `round_points` aren't read, but they are
+#![allow(unused_assignments)]
+
 pub fn day02() {
+    println!("\nday 2:");
+
     let file = std::fs::read_to_string("private/day2.txt")
         .expect("There should be a file private/day2.txt");
     let player_moves = file
@@ -32,7 +37,7 @@ pub fn day02() {
         janken.play(player1_move, player2_move);
     });
 
-    println!("part1: {}", janken.points);
+    println!("\tpart1: {}", janken.points);
 
     // part 2
     let mut janken = Janken::new();
@@ -53,8 +58,7 @@ pub fn day02() {
         janken.play(player1_move, player2_move);
     });
 
-    println!("part2: {}", janken.points);
-    println!("history: {:#?}", janken.history);
+    println!("\tpart2: {}", janken.points);
 }
 
 #[derive(Debug, Clone)]
