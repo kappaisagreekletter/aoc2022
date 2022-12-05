@@ -6,6 +6,7 @@ pub fn day02() {
 
     let file =
         std::fs::read_to_string("inputs/day2.txt").expect("There should be a file inputs/day2.txt");
+
     let player_moves = file
         .lines()
         .map(|round| {
