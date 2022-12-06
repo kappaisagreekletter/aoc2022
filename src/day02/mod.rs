@@ -166,9 +166,7 @@ impl Janken {
 
     /// prints the game history with each round on a new line
     pub fn print_history(&self) {
-        let history = &self.history;
-
-        for round in history {
+        for round in &self.history {
             println!(
                 "{}\t{:#?}\t{:#?}\t-> {:#?}:{}",
                 round.round,
