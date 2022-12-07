@@ -24,12 +24,14 @@ fn get_sum_priority_of_lines(lines: &str) -> u32 {
             if rucksack == "" {
                 return 0;
             }
+
             let (left, right) = rucksack.split_at(rucksack.len() / 2);
             for c in left.chars() {
                 if right.contains(c) {
                     return get_priority(c) as u32;
                 }
             }
+
             panic!("no duplicates found in rucksack: {rucksack}");
         })
         .sum()
@@ -37,9 +39,9 @@ fn get_sum_priority_of_lines(lines: &str) -> u32 {
 
 fn get_badges_prio_sum(lines: &str) -> u32 {
     let split_file: Vec<&str> = lines.split("\n").collect();
-    let mut sum_badges: u32 = 0;
+    let mut sum_badges = 0u32;
     let mut three_rucksacks: Vec<&str> = Vec::new();
-    let mut i = 0;
+    let mut i = 0u32;
     for rucksack in split_file {
         i += 1;
         if i % 3 == 0 {

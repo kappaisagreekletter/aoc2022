@@ -11,30 +11,30 @@ pub fn day04() {
         .split("\n")
         .map(|line| {
             let split_line = line.split(",").collect::<Vec<&str>>();
-            if check_contained(split_line, false) {
+            return if check_contained(split_line, false) {
                 1
             } else {
                 0
-            }
+            };
         })
         .sum::<u32>();
 
-    println!("\tpart1: {contained_count:#?}");
+    println!("\tpart1: {contained_count}");
 
     // part 2
     let contained_count = file
         .split("\n")
         .map(|line| {
             let split_line = line.split(",").collect::<Vec<&str>>();
-            if check_contained(split_line, true) {
+            return if check_contained(split_line, true) {
                 1
             } else {
                 0
-            }
+            };
         })
         .sum::<u32>();
 
-    println!("\tpart2: {contained_count:#?}");
+    println!("\tpart2: {contained_count}");
 }
 
 fn check_contained(line: Vec<&str>, fully_contained: bool) -> bool {
